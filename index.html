@@ -214,7 +214,7 @@
           <button class="btn light" id="back-home" type="button">Volver al inicio</button>
         </div>
 
-        <div class="board-card" aria-label="Tablero sudoku">
+        <div class="board-card sudoku-panel" aria-label="Tablero sudoku">
           <div class="board-header">
             <div class="difficulty-wrap">
               <label for="difficulty-select">Dificultad:</label>
@@ -223,18 +223,25 @@
             </div>
             <span id="timer">00:00</span>
           </div>
-          <div class="board" id="board"></div>
-          <div class="progress-wrapper" aria-label="Progreso del tablero">
-            <div class="progress-track">
-              <div id="progress-fill" class="progress-fill"></div>
+          <div class="sudoku-layout">
+            <div class="sudoku-main">
+              <div class="board" id="board"></div>
+              <div class="progress-wrapper" aria-label="Progreso del tablero">
+                <div class="progress-track">
+                  <div id="progress-fill" class="progress-fill"></div>
+                </div>
+                <p id="progress-text" class="progress-text">0/0 celdas correctas (0%)</p>
+              </div>
+              <p id="status" class="status"></p>
             </div>
-            <p id="progress-text" class="progress-text">0/0 celdas correctas (0%)</p>
-          </div>
-          <p id="status" class="status"></p>
-          <div id="keypad" class="board-actions" aria-label="Teclado numérico"></div>
-          <div class="board-actions controls">
-            <button id="hint" class="chip" type="button">Pista</button>
-            <button id="clear-cell" class="chip" type="button">Borrar</button>
+            <aside class="sudoku-sidepanel" aria-label="Controles del tablero">
+              <button id="new-game" class="btn primary side-main-action" type="button">Nuevo juego</button>
+              <div id="keypad" class="board-actions" aria-label="Teclado numérico"></div>
+              <div class="board-actions controls">
+                <button id="hint" class="chip" type="button">Pista</button>
+                <button id="clear-cell" class="chip" type="button">Borrar</button>
+              </div>
+            </aside>
           </div>
         </div>
       </section>

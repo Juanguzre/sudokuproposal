@@ -42,6 +42,7 @@ const timerEl = document.getElementById("timer");
 const statusEl = document.getElementById("status");
 const hintBtn = document.getElementById("hint");
 const clearBtn = document.getElementById("clear-cell");
+const newGameBtn = document.getElementById("new-game");
 const themeBtn = document.getElementById("theme-toggle");
 const playNowBtn = document.getElementById("play-now");
 const tabInicioBtn = document.getElementById("tab-inicio");
@@ -933,6 +934,11 @@ function setupControls() {
 
   difficultySelect.addEventListener("change", (event) => {
     loadDifficulty(event.target.value);
+  });
+
+  newGameBtn?.addEventListener("click", () => {
+    loadDifficulty(currentDifficulty.key);
+    setStatus("Nuevo tablero generado. ¡A jugar!");
   });
 
   playNowBtn.addEventListener("click", () => setTab("juego"));

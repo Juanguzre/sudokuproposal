@@ -61,6 +61,11 @@ main { max-width: 1160px; margin: 0 auto; padding: 1rem; }
 .difficulty-select { border: 1px solid var(--border); background: var(--surface); color: var(--text); border-radius: 8px; padding: .35rem .5rem; font-weight: 600; }
 .difficulty-label { font-size: .82rem; color: var(--muted); }
 
+.sudoku-panel { padding: 0.9rem 0.9rem 1rem; }
+.sudoku-layout { display: grid; grid-template-columns: minmax(0, 1fr) 225px; gap: 0.85rem; align-items: start; }
+.sudoku-sidepanel { display: grid; gap: 0.65rem; align-self: stretch; }
+.side-main-action { width: 100%; border-radius: 12px; padding: 0.72rem 0.9rem; }
+
 .board { display: grid; grid-template-columns: repeat(9,1fr); width: min(100%, 540px); aspect-ratio: 1 / 1; margin: 0 auto; border: 3px solid var(--subgrid-line); border-radius: 10px; overflow: hidden; }
 .cell,.sign-cell { aspect-ratio: 1 / 1; width: 100%; border: 1px solid #d6daf8; display: grid; place-items: center; font-weight: 700; color: var(--text); background: var(--cell-bg); }
 .cell { cursor: pointer; 
@@ -81,8 +86,13 @@ font-size: clamp(1.5rem, 4vw, 2.4rem);}
 .status.ok { color: #0e8b44; font-weight: 700; }
 .board-actions { margin-top: .8rem; display: flex; gap: .6rem; flex-wrap: wrap; }
 #keypad { justify-content: center; }
+.sudoku-sidepanel .board-actions { margin-top: 0; }
+.sudoku-sidepanel #keypad { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: .55rem; }
 .chip { border: 1px solid var(--border); background: var(--surface); color: var(--muted); border-radius: 999px; padding: .45rem .8rem; cursor: pointer; }
 .chip.number { min-width: 42px; color: var(--text); font-weight: 700; }
+.sudoku-sidepanel .chip.number { border-radius: 10px; width: 100%; min-width: 0; min-height: 58px; font-size: 2.1rem; font-weight: 800; color: var(--text); }
+.sudoku-sidepanel .controls { justify-content: flex-start; }
+.sudoku-sidepanel .controls .chip { padding: .4rem .9rem; font-weight: 600; }
 
 
 .guide-panel { margin-top: 1rem; }
@@ -181,6 +191,10 @@ font-size: clamp(1.5rem, 4vw, 2.4rem);}
   nav { display: none; }
   .hero { grid-template-columns: 1fr; }
   .board-card.compact { max-width: none; }
+  .sudoku-layout { grid-template-columns: 1fr; }
+  .sudoku-sidepanel { grid-template-columns: 1fr; }
+  .sudoku-sidepanel #keypad { max-width: 320px; }
+  .sudoku-sidepanel .controls { justify-content: center; }
   .summoner-header { grid-template-columns: 1fr; justify-items: center; text-align: center; }
   .summoner-meta { padding-right: 0; }
   .streak-chip { position: static; margin-bottom: .55rem; }
